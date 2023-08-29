@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_final_fields, unused_field, no_leading_underscores_for_local_identifiers, unused_local_variable, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_final_fields, unused_field, no_leading_underscores_for_local_identifiers, unused_local_variable, prefer_const_literals_to_create_immutables, prefer_interpolation_to_compose_strings, unnecessary_brace_in_string_interps, avoid_print
 
 import 'package:al_quran_app/models/qari.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +9,9 @@ class AudioScreen extends StatefulWidget {
   final Qari qari;
   final int index;
   final List<Surah>? list;
-  const AudioScreen({Key? key, required this.qari, required this.index, this.list}) : super(key: key);
+  const AudioScreen(
+      {Key? key, required this.qari, required this.index, this.list})
+      : super(key: key);
 
   @override
   State<AudioScreen> createState() => _AudioScreenState();
@@ -26,17 +28,17 @@ class _AudioScreenState extends State<AudioScreen> {
   @override
   void initState() {
     setState(() {
-      currentIndex = widget.index-1;
-      dataIndex = widget.index-1;
+      currentIndex = widget.index - 1;
+      dataIndex = widget.index - 1;
     });
 
     // Surah is from 1 to 114 so
     // 001 , 002 , 003 ..... 010, 011, 012, ..... 099, 100, 101, ...114
-    if(widget.index<10) {
-      ind = "00"+(widget.index.toString());
-    } else if (widget.index<100) {
-      ind = "0"+(widget.index.toString());
-    } else if (widget.index>100) {
+    if (widget.index < 10) {
+      ind = "00" + (widget.index.toString());
+    } else if (widget.index < 100) {
+      ind = "0" + (widget.index.toString());
+    } else if (widget.index > 100) {
       ind = (widget.index.toString());
     }
 
@@ -52,13 +54,10 @@ class _AudioScreenState extends State<AudioScreen> {
     super.dispose();
   }
 
-  void didChangeAppLifecycleState(AppLifecycleState state) {
-
-  }
-
+  void didChangeAppLifecycleState(AppLifecycleState state) {}
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold();
   }
 }

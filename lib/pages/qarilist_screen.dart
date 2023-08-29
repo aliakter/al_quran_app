@@ -76,7 +76,14 @@ class _QariListScreenState extends State<QariListScreen> {
                         return QariCustomTile(
                           qari: snapshot.data![index],
                           ontap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => AudioSurahScreen()));
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => AudioSurahScreen(
+                                  qari: Qari(),
+                                ),
+                              ),
+                            );
                           },
                         );
                       },

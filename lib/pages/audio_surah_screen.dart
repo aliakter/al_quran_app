@@ -8,8 +8,8 @@ import '../models/qari.dart';
 import 'audio_screen.dart';
 
 class AudioSurahScreen extends StatefulWidget {
-  // final Qari qari;
-  const AudioSurahScreen({Key? key}) : super(key: key);
+  final Qari qari;
+  const AudioSurahScreen({Key? key, required this.qari}) : super(key: key);
 
   @override
   State<AudioSurahScreen> createState() => _AudioSurahScreenState();
@@ -47,16 +47,16 @@ class _AudioSurahScreenState extends State<AudioSurahScreen> {
                     totalAya: snapshot.data![index].numberOfAyahs,
                     number: snapshot.data![index].number,
                     onTap: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (context) => AudioScreen(
-                      //       qari: widget.qari,
-                      //       index: index + 1,
-                      //       list: surah,
-                      //     ),
-                      //   ),
-                      // );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => AudioScreen(
+                            qari: widget.qari,
+                            index: index + 1,
+                            list: surah,
+                          ),
+                        ),
+                      );
                     }),
               );
             }
